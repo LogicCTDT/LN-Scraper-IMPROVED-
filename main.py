@@ -55,9 +55,9 @@ for s in soup.select('div.EbcjtZbe'):
 for s in soup.select('div#pf-6111-1'):
     s.extract()
 book_title = soup.find('a', 'booktitle')
+chapter_title = soup.find('span', 'chapter-title')
 content = soup.find('div', 'chapter-content font_default')
-
-res.append(get_text(content))
+res.append(get_text(chapter_title) + "\n\n\n" + get_text(content))
 next = soup.find('a', 'button nextchap').get('href')
 
 i += 1
@@ -80,8 +80,9 @@ while 1:
     for s in soup.select('div#pf-6111-1'):
         s.extract()
     book_title = soup.find('a', 'booktitle')
+    chapter_title = soup.find('span', 'chapter-title')
     content = soup.find('div', 'chapter-content font_default')
-    res.append(get_text(content))
+    res.append(get_text(chapter_title) + "\n\n\n" + get_text(content))
     i += 1
     try: 
         next = soup.find('a', 'button nextchap').get('href')

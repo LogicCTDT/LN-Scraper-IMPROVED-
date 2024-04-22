@@ -1,0 +1,1 @@
+Small project designed to scrape text off of certain websites and convert them into pdfs. My personal project for easier offline reading. I actually did this two years ago but not very well. This time I've improved it to work much better.
